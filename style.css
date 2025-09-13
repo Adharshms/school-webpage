@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Merriweather&display=swap');
+
+/* Base & Typography */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  word-spacing: 0.4px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* First paragraph indentation */
+section > h2 + p,
+section > h3 + p {
+  text-indent: 20px;
+}
+
+/* Links */
+a {
+  color: #2a4d69;
+  text-decoration: underline;
+  outline: none;
+}
+
+a:visited {
+  color: #4b3832;
+}
+
+a:hover,
+a:focus {
+  color: #1e2f3c;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  background-color: #2a4d69;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+a.external::after {
+  content: ' 🔗';
+  font-size: 0.9em;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 2rem;
+  padding-left: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+/* Navigation base styles */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #2a4d69; /* Match page design */
+}
+
+.nav li a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover and focus effects */
+.nav li a:hover,
+.nav li a:focus {
+  background-color: #1e2f3c;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Active state */
+.nav li a:active {
+  background-color: #4b3832;
+}
