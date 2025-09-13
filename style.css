@@ -1,50 +1,122 @@
+/* =======================
+   Fonts
+========================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Merriweather&display=swap');
 
-/* Base & Typography */
+/* =======================
+   Base Styles
+========================== */
 html {
-  font-size: 10px;
+  font-size: 10px; /* For easy rem calculation */
 }
 
 body {
   font-family: 'Merriweather', serif;
   font-size: 1.6rem;
   line-height: 1.6;
-  letter-spacing: 0.2px;
-  word-spacing: 0.4px;
+  letter-spacing: 0.3px;
+  word-spacing: 0.5px;
+  color: #222;
+  background-color: #fff;
   margin: 0;
   padding: 0;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
+/* =======================
+   Header
+========================== */
+header {
+  background-color: #002d62;
+  padding: 2rem 0;
+  color: white;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+/* =======================
+   Headings
+========================== */
+h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.5px;
+  color: #002d62;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3.2rem;
-}
-
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
 }
 
-h3 {
-  font-size: 2rem;
+/* =======================
+   Paragraphs
+========================== */
+p {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
-/* First paragraph indentation */
+/* Indent first paragraph after a heading inside a section */
 section > h2 + p,
 section > h3 + p {
   text-indent: 20px;
 }
 
-/* Links */
+/* =======================
+   Navigation Menu
+========================== */
+nav {
+  background-color: #002d62;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #005bb5;
+  text-decoration: none;
+}
+
+nav a:active {
+  background-color: #004494;
+}
+
+/* =======================
+   Links (Site-wide)
+========================== */
 a {
-  color: #2a4d69;
+  color: #002d62;
   text-decoration: underline;
   outline: none;
 }
@@ -55,61 +127,91 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: #1e2f3c;
+  color: #005bb5;
   text-decoration: none;
 }
 
 a:active {
+  background-color: #002d62;
   color: white;
-  background-color: #2a4d69;
   padding: 2px 4px;
   border-radius: 3px;
 }
 
+/* External links (marked with class="external") */
 a.external::after {
-  content: ' 🔗';
+  content: " 🔗";
   font-size: 0.9em;
+  vertical-align: middle;
 }
 
-/* Lists */
+/* =======================
+   Lists
+========================== */
 ul, ol {
-  margin-left: 2rem;
-  padding-left: 1rem;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 2.4rem;
+  line-height: 1.6;
 }
 
 li {
+  margin-bottom: 0.8rem;
+}
+
+/* Custom bullet style for unordered lists */
+ul li::marker {
+  content: "▸ ";
+  color: #002d62;
+  font-size: 1.2rem;
+}
+
+/* =======================
+   Aside
+========================== */
+aside {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+aside h2 {
+  font-size: 2.2rem;
+  margin-top: 0;
+}
+
+aside ul {
+  list-style: square inside;
+  padding-left: 1rem;
+}
+
+aside li {
   margin-bottom: 0.5rem;
 }
-/* Navigation base styles */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 1rem 0;
-  background-color: #2a4d69; /* Match page design */
-}
 
-.nav li a {
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
+/* =======================
+   Footer
+========================== */
+footer {
+  background-color: #002d62;
   color: white;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  font-size: 1.4rem;
 }
 
-/* Hover and focus effects */
-.nav li a:hover,
-.nav li a:focus {
-  background-color: #1e2f3c;
-  color: #fff;
-  text-decoration: none;
-}
+/* =======================
+   Responsive Enhancements
+========================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Active state */
-.nav li a:active {
-  background-color: #4b3832;
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
 }
